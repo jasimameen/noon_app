@@ -1,8 +1,13 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class CarousalView extends StatefulWidget {
-  const CarousalView({super.key});
+  final double? aspectRatio;
+  const CarousalView({
+    Key? key,
+    this.aspectRatio,
+  }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -30,7 +35,8 @@ class CarousalViewState extends State<CarousalView> {
           itemCount: listPaths.length,
           options: CarouselOptions(
             autoPlay: true,
-            autoPlayInterval: const Duration(seconds: 3),
+            aspectRatio: widget.aspectRatio ?? 20 / 9,
+            autoPlayInterval: const Duration(seconds: 4),
             onPageChanged: (index, reason) {
               setState(() {
                 currentPos = index;

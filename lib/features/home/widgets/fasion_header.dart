@@ -55,7 +55,7 @@ class FasionHeader extends StatelessWidget {
               child: const Text('SHOP NOW'),
             ),
 
-            UIConstants.width10,
+            UIConstants.width5,
           ],
         ),
       ],

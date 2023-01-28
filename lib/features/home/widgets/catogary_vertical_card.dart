@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import 'package:noon_app/constants/ui_constants.dart';
@@ -47,6 +46,7 @@ class CategaryCard extends StatelessWidget {
           radius: 35,
           backgroundColor: Colors.grey,
           // child: Image.asset(image, fit: BoxFit.contain),
+          child: Icon(Icons.flutter_dash, size: 30),
         ),
 
         UIConstants.height10,

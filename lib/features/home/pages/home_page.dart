@@ -64,10 +64,7 @@ class HomePage extends StatelessWidget {
             UIConstants.height10,
 
             // product ads
-            const LimitedBox(
-              maxHeight: 200,
-              maxWidth: double.maxFinite,
-            ),
+            const CarousalView(),
 
             // trending electronic deals
             const _ProductCardsSection(title: 'Trending deals in electronics'),

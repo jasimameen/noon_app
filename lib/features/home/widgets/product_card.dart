@@ -18,6 +18,7 @@ class ProductCard extends StatelessWidget {
       padding: const EdgeInsets.all(5),
       color: Colors.white,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // image
           ImageContainer(
