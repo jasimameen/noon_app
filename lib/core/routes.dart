@@ -5,7 +5,7 @@ import 'package:noon_app/features/auth/pages/sign_out_page.dart';
 import 'package:noon_app/features/home/pages/home_page.dart';
 
 class Routes {
-  static const initialRoute = HomePage.routeName;
+  static const initialRoute = BasePage.routeName;
 
   static final routes = <String, WidgetBuilder>{
     BasePage.routeName: (context) => const BasePage(),

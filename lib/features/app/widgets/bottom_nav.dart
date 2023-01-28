@@ -26,8 +26,9 @@ class BottomNavigationWidget extends StatelessWidget {
             label: "Categories",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AssetGraphics.dealsBoxIcon),
-            label: "Clearance Deals",
+            icon:
+                Image.asset(AssetGraphics.dealsBoxIcon, height: 30, width: 30),
+            label: "Clearance\n    Deals",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(AssetGraphics.accountIcon),
