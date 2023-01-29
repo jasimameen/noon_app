@@ -6,13 +6,15 @@ import 'package:noon_app/common/views/dash_grid_view.dart';
 import 'package:noon_app/common/views/horizontal_scroll_view.dart';
 import 'package:noon_app/constants/dummy.dart';
 import 'package:noon_app/constants/ui_constants.dart';
+import 'package:noon_app/core/utils/messenger/messenger.dart';
 import 'package:noon_app/features/home/widgets/badge_text.dart';
 import 'package:noon_app/features/home/widgets/banner_ad.dart';
 import 'package:noon_app/features/home/widgets/catogary_vertical_card.dart';
+import 'package:noon_app/features/home/widgets/electronic_product_card.dart';
 import 'package:noon_app/features/home/widgets/fasion_header.dart';
-import 'package:noon_app/features/home/widgets/rounded_rectangular_card.dart';
 import 'package:noon_app/features/home/widgets/location_selecter.dart';
 import 'package:noon_app/features/home/widgets/product_card.dart';
+import 'package:noon_app/features/home/widgets/rounded_rectangular_card.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = '/home';
@@ -39,7 +41,7 @@ class HomePage extends StatelessWidget {
               ),
               separator: UIConstants.width20,
               itemCount: 10,
-              color: const Color.fromARGB(255, 249, 247, 123),
+              color: const Color.fromARGB(255, 255, 240, 190),
             ),
 
             // recommended for you
@@ -64,7 +66,7 @@ class HomePage extends StatelessWidget {
             UIConstants.height10,
 
             // product ads
-            const CarousalView(),
+            const CarousalView(aspectRatio: 20 / 6),
 
             // trending electronic deals
             const _ProductCardsSection(title: 'Trending deals in electronics'),
@@ -72,7 +74,7 @@ class HomePage extends StatelessWidget {
             // explore more
             HorizontalScrollView(
               title: 'Explore More',
-              color: const Color.fromARGB(255, 249, 247, 123),
+              color: const Color.fromARGB(255, 250, 248, 165),
               itemBuilder: (context, index) =>
                   RoundedRectangularCard(image: Dummy.exploreImages[index]),
               itemCount: Dummy.exploreImages.length,
@@ -93,7 +95,9 @@ class HomePage extends StatelessWidget {
             UIConstants.height10,
 
             // ad
-            const BannerAd(image: Dummy.bannerAd),
+            const BannerAd(
+              image: Dummy.bannerAd,
+            ),
 
             // noon brand deals
             const _ProductCardsSection(title: 'Noon brand deals'),
@@ -120,6 +124,17 @@ class HomePage extends StatelessWidget {
             const BannerAd(image: Dummy.bannerAd),
 
             // electronics
+            const _ElectronicsCardsSection(
+                title: 'Electronics', items: Dummy.electronicsImages),
+            const _ElectronicsCardsSection(
+                title: 'Mobiles & Accessories', items: Dummy.electronicsImages),
+            const _ElectronicsCardsSection(
+                title: 'Laptops & Accessories', items: Dummy.electronicsImages),
+            const _ElectronicsCardsSection(
+                title: 'Electronics', items: Dummy.electronicsImages),
+
+            // ad
+            const BannerAd(image: Dummy.bannerAd),
           ],
         ),
       ),
@@ -139,9 +154,13 @@ class _ProductCardsSection extends StatelessWidget {
     return HorizontalScrollView(
       height: 400,
       title: title,
-      itemBuilder: (context, index) =>
-          const ProductCard(product: Dummy.dummyProduct),
-      itemCount: 10,
+      itemBuilder: (context, index) => ProductCard(
+        product: Dummy.dummyProduct.copyWith(
+          image: Dummy.productImages[index],
+          bestSeller: index.isEven ? true : false,
+        ),
+      ),
+      itemCount: Dummy.productImages.length,
       trailing: OutlinedButton(
         onPressed: () {},
         child: const Text('View All'),
@@ -163,11 +182,43 @@ class _FashionCardSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return HorizontalScrollView(
       height: 300,
-      color: Color.fromARGB(255, 246, 211, 223),
+      color: const Color.fromARGB(255, 246, 211, 223),
       header: FasionHeader(title: title),
       itemBuilder: (context, index) =>
           RoundedRectangularCard(image: itemList[index]),
       itemCount: itemList.length,
+    );
+  }
+}
+
+class _ElectronicsCardsSection extends StatelessWidget {
+  final String title;
+  final List<String> items;
+  const _ElectronicsCardsSection({
+    Key? key,
+    required this.title,
+    required this.items,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return HorizontalScrollView(
+      height: 160,
+      title: title,
+      itemBuilder: (context, index) => ElectronicProductCard(
+        product: ElectronicProduct(title: title, image: items[index]),
+      ),
+      itemCount: Dummy.electronicsImages.length,
+      trailing: ElevatedButton(
+        onPressed: () {
+          Messenger.showSnackBar('$title view all pressed');
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.white,
+        ),
+        child: const Text('View All'),
+      ),
     );
   }
 }

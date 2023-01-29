@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 
 import 'package:noon_app/constants/ui_constants.dart';
 import 'package:noon_app/features/home/widgets/badge_text.dart';
@@ -66,12 +68,19 @@ class ProductCard extends StatelessWidget {
             children: const [
               // express
               BadgeText(
-                text: 'express',
+                text: ' express ',
                 textColor: Colors.black,
                 background: Colors.yellow,
               ),
               UIConstants.width3,
-              BadgeText(text: '4.5', trailing: Icon(Icons.star)),
+              BadgeText(
+                text: ' 4.5 ',
+                background: Colors.green,
+                trailing: Icon(
+                  CupertinoIcons.star_fill,
+                  color: Colors.white,
+                ),
+              ),
               UIConstants.width3,
               Text('(115)', style: TextStyle(color: Colors.grey)),
             ],
@@ -96,14 +105,11 @@ class ImageContainer extends StatelessWidget {
     return Stack(
       children: [
         // product image
-        Image.asset(
-          image,
-          fit: BoxFit.cover,
-          errorBuilder: (context, err, _) => Container(
-            height: 190,
-            width: 140,
-            decoration: const BoxDecoration(color: Colors.grey),
-          ),
+        Container(
+          height: 190,
+          width: 140,
+          decoration: const BoxDecoration(color: Colors.grey),
+          child: AvifImage.network(image, fit: BoxFit.cover),
         ),
 
         // best seller tag
@@ -135,4 +141,26 @@ class Product {
     required this.reviews,
     this.bestSeller = false,
   });
+
+  Product copyWith({
+    String? image,
+    String? title,
+    double? price,
+    double? oldPrice,
+    int? discountPercentage,
+    double? rating,
+    int? reviews,
+    bool? bestSeller,
+  }) {
+    return Product(
+      image: image ?? this.image,
+      title: title ?? this.title,
+      price: price ?? this.price,
+      oldPrice: oldPrice ?? this.oldPrice,
+      discountPercentage: discountPercentage ?? this.discountPercentage,
+      rating: rating ?? this.rating,
+      reviews: reviews ?? this.reviews,
+      bestSeller: bestSeller ?? this.bestSeller,
+    );
+  }
 }

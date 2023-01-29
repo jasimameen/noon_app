@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:noon_app/constants/asset_constants.dart';
+import '../../../constants/asset_constants.dart';
 
 ValueNotifier<int> indexChangeNotifier = ValueNotifier(0);
 

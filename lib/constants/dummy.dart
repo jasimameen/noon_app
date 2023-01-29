@@ -1,10 +1,10 @@
-import 'package:noon_app/features/home/widgets/product_card.dart';
+import '../features/home/widgets/product_card.dart';
 
 class Dummy {
   static const dummyProduct = Product(
     image:
         'https://f.nooncdn.com/products/tr:n-t_240/v1662640953/N53346840A_1.avif',
-    title: 'untitled',
+    title: 'Iphone 12 pro Max 256 Deep Purple',
     price: 1232.45,
     oldPrice: 2343.54,
     discountPercentage: 75,
@@ -14,6 +14,13 @@ class Dummy {
 
   static const bannerAd =
       'https://f.nooncdn.com/mpcms/EN0001/assets/3acfd81a-50e4-46b4-8161-d937720fe77d.gif';
+
+  static const productImages = [
+    'https://f.nooncdn.com/products/tr:n-t_240/v1662964834/N53346828A_1.avif',
+    'https://f.nooncdn.com/products/tr:n-t_240/v1663322644/N43241184A_1.avif',
+    'https://f.nooncdn.com/products/tr:n-t_240/v1668531488/N22732308A_1.avif',
+    'https://f.nooncdn.com/products/tr:n-t_240/v1653053749/N52535496A_1.avif'
+  ];
 
   static const megaDealsList = [
     'https://f.nooncdn.com/mpcms/EN0001/assets/2fd421b1-4c19-4a29-b5b4-45e129381e4c.png',
@@ -69,5 +76,11 @@ class Dummy {
     "https://f.nooncdn.com/mpcms/EN0002/assets/efd0b0fd-cafa-4f64-a2c7-5c1e174cd2b0.png",
   ];
 
-  
+  static const electronicsImages = [
+    "https://f.nooncdn.com/mpcms/EN0001/assets/c1c670c8-88b1-4f1a-a537-b38ad9fad636.png",
+    "https://f.nooncdn.com/mpcms/EN0001/assets/a202f0fb-898d-4b68-941b-6aa3610ef63f.png",
+    "https://f.nooncdn.com/mpcms/EN0001/assets/36506a62-0ce5-46cc-b859-d6063f50ada7.png",
+    "https://f.nooncdn.com/mpcms/EN0001/assets/449f98bb-08b9-4f57-a1da-93eaa753b118.png",
+    "https://f.nooncdn.com/mpcms/EN0001/assets/544816f4-6da7-47e5-84f3-70ce556fb710.png",
+  ];
 }

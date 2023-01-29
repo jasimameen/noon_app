@@ -13,6 +13,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
   carousel_slider: ^4.2.1
+  flutter_avif: ^1.0.1
+  shared_preferences: ^2.0.17
 
 dev_dependencies:
   flutter_test:

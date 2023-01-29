@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:noon_app/constants/ui_constants.dart';
+import '../../../constants/ui_constants.dart';
 
 class CategaryVerticalCard extends StatelessWidget {
   final String label;
@@ -46,7 +46,7 @@ class CategaryCard extends StatelessWidget {
           radius: 35,
           backgroundColor: Colors.grey,
           // child: Image.asset(image, fit: BoxFit.contain),
-          child: Icon(Icons.flutter_dash, size: 30),
+          child: Icon(Icons.flutter_dash, size: 50, color: Colors.white),
         ),
 
         UIConstants.height10,

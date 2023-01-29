@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:noon_app/constants/asset_constants.dart';
-import 'package:noon_app/common/views/carousal_view.dart';
-import 'package:noon_app/constants/ui_constants.dart';
+import '../../../constants/asset_constants.dart';
+import '../../../constants/ui_constants.dart';
 
 class LocationSelecter extends StatelessWidget {
   const LocationSelecter({super.key});

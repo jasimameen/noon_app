@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:noon_app/core/routes.dart';
-import 'package:noon_app/core/utils/messenger/messenger.dart';
-import 'package:noon_app/core/utils/navigation/navigation.dart';
 
-void main() => runApp(const MyApp());
+import 'core/routes.dart';
+import 'core/utils/messenger/messenger.dart';
+import 'core/utils/navigation/navigation.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

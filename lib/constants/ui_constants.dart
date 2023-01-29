@@ -14,14 +14,14 @@ class UIConstants {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(
-            height: 30,
-            child: SvgPicture.asset(
-              AssetGraphics.noonLogo,
-              alignment: Alignment.centerLeft,
-            )),
-        width10,
-        const Flexible(child: SearchBar()),
+        SvgPicture.asset(
+            AssetGraphics.noonLogo,
+            height: 50,
+            width: 100,
+            alignment: Alignment.centerLeft,
+          
+        ),
+        const Expanded(child: SearchBar()),
       ],
     ),
   );

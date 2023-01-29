@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:noon_app/features/home/pages/home_page.dart';
+import '../../home/pages/home_page.dart';
 import 'bottom_nav.dart';
 
 /// base App
